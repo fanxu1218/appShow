@@ -28,10 +28,11 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
 
 ## 平台发布状态
 
-以所有者本次提供的发布信息为准（2026-09-16）：
+按所有者确认的信息更新；Android 的 Google Play 公开页面已核对（2026-10-14）：
 
 - Windows 已发布：[Microsoft Store](https://apps.microsoft.com/detail/9n62c3shvr6n?hl=zh-CN&gl=US)。
-- macOS、iOS、iPadOS、Android、HarmonyOS、Android TV、Apple TV 尚未发布，不提供占位下载链接。
+- Android 已发布：[Google Play](https://play.google.com/store/apps/details?id=com.fanxu.seecomics)。Android TV 的发布状态单独记录。
+- macOS、iOS、iPadOS、HarmonyOS、Android TV、Apple TV 尚未发布，不提供占位下载链接。
 - Xbox 已由所有者明确纳入上架计划，目前尚未发布，不将 Windows 商店链接当作 Xbox 下载入口。
 - 多平台适配不等于各平台已上架，也不代表云端自动同步。
 - 不展示未确认的售价、发布日期、用户数量或评价；价格、地区和系统要求以商店页面为准。
