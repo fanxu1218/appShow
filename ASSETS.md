@@ -1,6 +1,6 @@
 # 漫架网站素材溯源
 
-所有素材取自所有者的 `SeeComicsShare` 工程，没有重新生成应用界面或引入第三方书籍封面。
+品牌与应用截图取自所有者的 `SeeComicsShare` 工程，没有重新生成应用界面或引入第三方书籍封面；平台图标来源见下方补充说明。
 
 | 网站文件 | 原工程内来源 | 用途 |
 | --- | --- | --- |
@@ -17,3 +17,5 @@
 表中短文件名均位于 `dist/assets/manjia/`。原截图未修改；手机、平板画框和局部展示由网页 CSS 布局实现。
 
 来源说明：原工程 `assets/branding/README.md`、`store/screenshots/1.0.0/windows-desktop-manifest.json`、`store/screenshots/huawei-appgallery-2026-09-11/README.md`。Windows 素材清单标记内容为 `first-party-fictional`；HarmonyOS 说明确认截图来自真实运行的预览构建，品牌插画为原创生成式宣传图。
+
+2026-11-05 介绍页改版复用原始 Logo 与应用截图，宣传插画不再用于介绍页首屏。新增 `windows.svg`、`android.svg` 来自 [Simple Icons v11.15.0](https://github.com/simple-icons/simple-icons/tree/11.15.0/icons)，按 CC0-1.0 分发；平台名称及标识属于各自权利方。图标在本地提供，页面不依赖外部图标或字体服务。
