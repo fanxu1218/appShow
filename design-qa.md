@@ -1,3 +1,54 @@
+# AppShow 首页风格统一检查（本次本地预览）
+
+日期：2026-11-05。范围：应用目录首页及独立 `home.css`；已发布的漫架介绍页 HTML、CSS、脚本、原版 `site.css` 和图片均未修改。
+
+## 视觉目标与证据
+
+- 用户明确要求沿用已确认、已发布的第二版漫架介绍页风格，本次是目录页的视觉统一，不是新方案探索或对另一页面内容的逐像素复制。
+- source visual truth path: `/Users/apple/.codex/visualizations/2026/11/05/01a1aa2c-24d9-7360-9e49-9a2a5c2aa1e7/manjia-desktop-final.jpg`
+- implementation screenshot path: `/Users/apple/.codex/visualizations/2026/11/05/01a1aa2c-24d9-7360-9e49-9a2a5c2aa1e7/appshow-home-style-compare.jpg`
+- 两张图均为 1036 × 1518 像素、DPR 1。实现截图在 1051 × 1518 CSS 视口中裁取 1036px 内容区，排除 15px 桌面滚动条，不缩放。状态为页面顶部、默认浅色主题。
+- 完整合成对照：同目录 `appshow-home-style-comparison.jpg`，已实际打开并检查。
+- 页头、标题、描述和按钮的原尺寸局部合成对照：同目录 `appshow-home-header-comparison.jpg`，已实际打开并检查。
+- 本地页面：`http://127.0.0.1:4173/`，通过 ChatGPT in-app browser 实际访问。
+
+## 比较历史与结论
+
+第一轮渲染为 blocked：浏览器仍使用原 URL 缓存的旧 `site.css`（343 条 CSS 规则），页面出现黑色背景、旧按钮覆盖和失去布局的品牌文字。证据为 `appshow-home-desktop-initial.jpg` 及浏览器 CSSOM；本地文件已经是新样式，说明不是新布局参数错误。
+
+修正：把新首页布局放在独立 `home.css` 中，恢复原 `site.css` 以保留历史兼容，并使首页加载 `manjia.css` + `home.css`。刷新后实际 CSSOM 为 119 条基础规则与 38 条首页规则，背景为 `rgb(252, 251, 248)`，品牌行恢复 flex 布局。已重新截图并完成完整/局部合成对照，没有剩余需要修正的 P0/P1/P2 项目。
+
+## 五项视觉检查
+
+- 字体与排版：直接复用介绍页的系统无衬线字体、主标题字重/行高、正文与灰色辅助文字。标题保持两行，手机不截断。AppShow 品牌、目录文字与单一主按钮是首页内容差异，属于预期设计。
+- 留白与布局：相同的页头高度、内容边距、居中首屏、按钮圆角与浅灰说明区。目录采用文字和真实界面两列；手机切换为一列，后续作品说明保持轻量文字排版。未引入新应用、虚构统计或密集卡片。
+- 颜色：共用 `#fcfbf8`、`#f2f0eb`、`#20211f`、`#64655f`、`#ce431b`。已移除首页黑底、大幅宣传海报、橙色色带及倾斜装饰。
+- 图片与标识：复用现有 AppShow favicon、漫架 Logo、原始 Windows 书架截图，图片保持自然比例，未生成或伪造应用界面。截图下保留真实界面与原创示例说明。
+- 产品文案：保留独立应用目录、漫架作为本地漫画/小说/PDF 阅读器、Windows/Android 已上线及后续作品说明；没有新增售价、发布日期、评价、在线书库或云同步承诺。
+
+## 功能与响应式检查
+
+- 实际点击“探索应用”，确认 `#apps` 定位成功；320px CSS 视口下区块距顶部约 20.08px。
+- 实际点击“走进漫架”进入 `/apps/manjia/`，确认介绍页标题和暖白样式；实际点击介绍页页脚 AppShow 返回 `/`。
+- 导航“认识漫架”、目录主按钮及截图链接均使用同一个相对路径 `apps/manjia/`。站内路径与锚点检查通过。
+- 检查 320、390、768、1440px CSS 视口；文档宽度分别为 305、375、753、1425px，均等于 `scrollWidth`，没有横向溢出。已查看完整手机、平板与宽屏截图。
+- 可见图片均成功加载，浏览器没有 error/warn 日志。
+- 沿用原生链接、语义标题、跳过导航入口、可见焦点及减少动画样式；未进行屏幕阅读器或完整无障碍认证。
+- `python3 scripts/validate-site.py`、`node --check dist/assets/site.js`、`git diff --check` 均通过。Node 使用本机 DevEco Studio 内置运行时。
+- 纯静态网页不需要应用编译或安装；未做真机、应用商店下载安装或线上发布验收。
+
+## 交付范围
+
+本次仅完成本地修改与预览，未提交、推送或发布。原 GitHub Pages 首页维持已发布版本；预览服务和浏览器标签留给用户检查。
+
+证据目录：`/Users/apple/.codex/visualizations/2026/11/05/01a1aa2c-24d9-7360-9e49-9a2a5c2aa1e7/`，另含 `appshow-home-before.jpg`、`appshow-home-1036.jpg`、`appshow-home-320.jpg`、`appshow-home-390.jpg`、`appshow-home-768.jpg`、`appshow-home-1440.jpg`。
+
+final result: passed
+
+---
+
+以下保留前一轮漫架介绍页改版记录。
+
 # 漫架介绍页改版视觉与交互检查
 
 日期：2026-11-05。范围：`dist/apps/manjia/index.html` 及独立样式、平台图标；应用目录首页及 SeeComicsShare 应用代码未修改。

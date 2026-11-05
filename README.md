@@ -8,8 +8,9 @@ fanxu 的独立应用展示网站。首页是可扩展的应用目录，每个�
 dist/
   index.html                 应用展示首页
   apps/manjia/index.html     漫架介绍、真实界面、下载状态与常见问题
-  assets/site.css            共享样式和响应式布局
-  assets/manjia.css          漫架介绍页独立的暖白简洁样式
+  assets/manjia.css          两页共用的暖白视觉基础与漫架介绍页布局
+  assets/home.css            应用目录首页布局和响应式样式
+  assets/site.css            原版页面样式，保留历史兼容
   assets/site.js             截图切换（键盘及无 JavaScript 降级）
   assets/favicon.svg         AppShow 标识
   assets/manjia/             漫架品牌与商店截图
@@ -49,7 +50,7 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dist
 
 ## 素材与文案来源
 
-见 [ASSETS.md](ASSETS.md)。介绍页使用真实应用截图与已确认的品牌 Logo，首页保留品牌宣传插画；截图里的作品为第一方虚构示例，不暗示应用内提供在线内容。产品文案依据 SeeComicsShare 当前 README、品牌说明及商店截图说明整理，未将内部计划、测试完成度、平台凭证或审核资料复制进网站。
+见 [ASSETS.md](ASSETS.md)。首页与介绍页使用真实应用截图与已确认的品牌 Logo，统一采用暖白、简洁的视觉样式；截图里的作品为第一方虚构示例，不暗示应用内提供在线内容。产品文案依据 SeeComicsShare 当前 README、品牌说明及商店截图说明整理，未将内部计划、测试完成度、平台凭证或审核资料复制进网站。
 
 ## 发布
 
