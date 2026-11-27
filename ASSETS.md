@@ -1,4 +1,4 @@
-# 漫架网站素材溯源
+# AppShow 网站素材溯源
 
 品牌与应用截图取自所有者的 `SeeComicsShare` 工程，没有重新生成应用界面或引入第三方书籍封面；平台图标来源见下方补充说明。
 
@@ -21,3 +21,15 @@
 2026-11-05 介绍页改版复用原始 Logo 与应用截图，宣传插画不再用于介绍页首屏。新增 `windows.svg`、`android.svg` 来自 [Simple Icons v11.15.0](https://github.com/simple-icons/simple-icons/tree/11.15.0/icons)，按 CC0-1.0 分发；平台名称及标识属于各自权利方。图标在本地提供，页面不依赖外部图标或字体服务。
 
 同日首页风格统一复用既有 `favicon.svg`、漫架 Logo 和 Windows 书架截图，移除首页插画海报与装饰色带，未新增图片或第三方素材。旧插画文件保留用于历史兼容。
+
+## 2026-11-27 HappyVPN
+
+HappyVPN 使用所有者 `HarmonyShadowrocket` 工程中已确认的 Liquid Cobalt 正式品牌素材，以下文件均原样复制；网页使用 CSS 排版，未生成或伪造应用界面。
+
+| 网站文件 | 原工程内来源 | 用途 |
+| --- | --- | --- |
+| `dist/assets/happyvpn/icon.png` | `AppScope/resources/base/media/app_icon.png` | 正式应用图标、站点图标与应用条目 |
+| `dist/assets/happyvpn/background.png` | `entry/src/main/resources/base/media/lc_ui_background.png` | 蓝色品牌背景 |
+| `dist/assets/happyvpn/flight.png` | `entry/src/main/resources/base/media/lc_ui_flight.png` | 蓝紫飞行标品牌插画 |
+
+来源清单：原工程 `docs/ui-liquid-cobalt/assets.json`。正式名称和配置、订阅、节点、规则等功能介绍依据当前 README；封测状态和公开申请邮箱由所有者在本次任务中确认。素材不含实际节点、订阅地址、凭据或个人设备信息。
